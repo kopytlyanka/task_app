@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testing/providers/app_bar_notifier.dart';
-import 'package:testing/providers/task_notifier.dart';
-import 'package:testing/providers/title_notifier.dart';
+import 'app_bar_notifier.dart';
+import 'task_notifier.dart';
+import 'title_notifier.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 class NotifierProvider extends StatefulWidget {
   final Widget child;
@@ -15,6 +16,7 @@ class NotifierProvider extends StatefulWidget {
   @override
   State<NotifierProvider> createState() => NotifierProviderState();
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 class NotifierProviderState extends State<NotifierProvider> {
   TaskNotifier taskNotifier = TaskNotifier();
@@ -24,17 +26,15 @@ class NotifierProviderState extends State<NotifierProvider> {
   @override
   Widget build(BuildContext context) {
     return _InheritedNotifierProvider(
-        data: this,
-        child: widget.child,
+      data: this,
+      child: widget.child,
     );
   }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 class _InheritedNotifierProvider extends InheritedWidget {
-  const _InheritedNotifierProvider({
-    required this.data,
-    required super.child
-  });
+  const _InheritedNotifierProvider({required this.data, required super.child});
 
   final NotifierProviderState data;
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testing/providers/notifier_provider.dart';
+import '../providers/notifier_provider.dart';
 import 'branch.dart';
+
 ////////////////////////////////////////////////////////////////////////////////
 class TaskApp extends StatelessWidget {
   const TaskApp({super.key});
@@ -16,8 +17,7 @@ class TaskApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: theme[400],
         appBarTheme: AppBarTheme(color: theme[400]),
-        floatingActionButtonTheme:
-          FloatingActionButtonThemeData(backgroundColor: theme[400]),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: theme[400]),
       ),
       home: homePage,
     );
